@@ -113,7 +113,28 @@
     <!-- LINKS DESKTOP (visibles desde 768px+) -->
     <div class="hidden md:flex items-center gap-6 font-['Inter'] text-sm tracking-normal">
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="index.html">Home</a>
-      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="servicios.html">Servicios</a>
+      <div class="relative group">
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200 flex items-center gap-1 cursor-pointer" href="servicios.html">
+        Servicios
+        <span class="material-symbols-outlined text-base">expand_more</span>
+      </a>
+      <!-- Dropdown desktop: aparece al hover -->
+      <div class="absolute top-full left-0 hidden group-hover:block bg-brand-nav-footer border border-primary-container min-w-[260px] shadow-xl z-50 pt-1">
+      <a href="servicios.html#coaching-individual" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Coaching Individual
+      </a>
+      <a href="servicios.html#coaching-organizaciones" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Coaching para Organizaciones
+      </a>
+      <a href="servicios.html#asesoria-estrategica" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Asesoría Estratégica
+      </a>
+      <a href="servicios.html#coaching-sistemico" class="block px-5 py-3 text-white/70 hover:text-white hover:bg-white/5 transition-colors text-sm flex items-center justify-between gap-2">
+        <span>Coaching Sistémico</span>
+        <span class="text-[9px] text-cta-accent uppercase tracking-wider font-bold">Pronto</span>
+      </a>
+      </div>
+    </div>
       <a class="text-brand-primary-btn border-b border-brand-primary-btn pb-0.5" href="escrituras.html">Escrituras</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="sobremi.html">Sobre mí</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="contacto.html">Contacto</a>
@@ -141,6 +162,12 @@
     <div class="px-6 py-6 flex flex-col gap-4 font-['Inter'] text-base">
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+      <div class="pl-4 flex flex-col gap-3 -mt-1 mb-1 border-l-2 border-brand-primary-btn/30">
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#coaching-individual">→ Coaching Individual</a>
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#coaching-organizaciones">→ Coaching para Organizaciones</a>
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#asesoria-estrategica">→ Asesoría Estratégica</a>
+        <a class="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2" href="servicios.html#coaching-sistemico">→ Coaching Sistémico <span class="text-[9px] text-cta-accent uppercase tracking-wider font-bold">Pronto</span></a>
+      </div>
       <a class="text-brand-primary-btn font-medium" href="escrituras.html">Escrituras</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
@@ -181,7 +208,7 @@
   <!-- ============================================================
        SECCIÓN 1 — Hero
        ============================================================ -->
-  <header class="px-12 max-w-7xl mx-auto mb-24 text-center">
+  <header class="px-6 md:px-12 max-w-7xl mx-auto mb-16 md:mb-24 text-center">
     <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.3em] font-bold mb-6 block">Diario Estratégico</span>
     <h1 class="text-5xl md:text-7xl font-medium text-primary text-editorial mb-8">Escrituras</h1>
     <div class="w-20 h-0.5 bg-cta-accent mx-auto"></div>
@@ -194,7 +221,7 @@
        SECCIÓN 2 — Artículo Destacado
        Nota más reciente: "Mi mayor error como líder..."
        ============================================================ -->
-  <section class="px-12 max-w-7xl mx-auto mb-32">
+  <section class="px-6 md:px-12 max-w-7xl mx-auto mb-16 md:mb-32">
     <article class="grid grid-cols-1 md:grid-cols-12 gap-0 bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
       <div class="md:col-span-7 relative h-[550px] overflow-hidden">
         <img alt="No siempre necesitás mejorar vos"
@@ -220,21 +247,21 @@
   <!-- ============================================================
        SECCIÓN 3 — Grilla de Artículos (3 columnas)
        ============================================================ -->
-  <section class="px-12 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+  <section class="px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-16">
 
       <!-- Artículo 1 grilla: La autonomía no se aprende esperando -->
       <article class="flex flex-col group">
-        <div class="aspect-[4/5] bg-white mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
+        <div class="aspect-[4/5] bg-white mb-3 md:mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
           <img alt="La autonomía no se aprende esperando"
                class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                src="images/escritura-nueva-02-autonomia.jpg">
         </div>
-        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-bold mb-4 block">Liderazgo y Autonomía</span>
-        <h3 class="text-3xl font-medium text-primary mb-6 leading-tight font-headline">
+        <span class="text-on-surface-variant text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-4 block">Liderazgo y Autonomía</span>
+        <h3 class="text-base sm:text-lg md:text-3xl font-medium text-primary mb-3 md:mb-6 leading-tight font-headline">
           La autonomía no se aprende esperando
         </h3>
-        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+        <p class="text-on-surface-variant font-light text-xs md:text-sm mb-4 md:mb-8 leading-relaxed hidden sm:block">
           Se construye tomando decisiones, con criterios claros, conversaciones y espacio para equivocarse.
         </p>
         <a class="mt-auto border-b border-primary/20 pb-2 w-max text-[11px] font-bold tracking-widest text-primary hover:border-cta-accent transition-colors hover:text-secondary" href="escritura-la-autonomia-no-se-aprende-esperando.html">
@@ -244,16 +271,16 @@
 
       <!-- Artículo 2 grilla: No automatices el desorden -->
       <article class="flex flex-col group">
-        <div class="aspect-[4/5] bg-white mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
+        <div class="aspect-[4/5] bg-white mb-3 md:mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
           <img alt="No automatices el desorden"
                class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                src="images/escritura-nueva-03-desorden.jpg">
         </div>
-        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-bold mb-4 block">IA y Gestión</span>
-        <h3 class="text-3xl font-medium text-primary mb-6 leading-tight font-headline">
+        <span class="text-on-surface-variant text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-4 block">IA y Gestión</span>
+        <h3 class="text-base sm:text-lg md:text-3xl font-medium text-primary mb-3 md:mb-6 leading-tight font-headline">
           No automatices el desorden
         </h3>
-        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+        <p class="text-on-surface-variant font-light text-xs md:text-sm mb-4 md:mb-8 leading-relaxed hidden sm:block">
           Antes de incorporar IA, revisá procesos, roles y decisiones. La tecnología puede acelerar un proceso, pero también sus problemas.
         </p>
         <a class="mt-auto border-b border-primary/20 pb-2 w-max text-[11px] font-bold tracking-widest text-primary hover:border-cta-accent transition-colors hover:text-secondary" href="escritura-no-automatices-el-desorden.html">
@@ -263,16 +290,16 @@
 
       <!-- Artículo 3 grilla: La conversación difícil empieza antes de hablar -->
       <article class="flex flex-col group">
-        <div class="aspect-[4/5] bg-white mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
+        <div class="aspect-[4/5] bg-white mb-3 md:mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
           <img alt="La conversación difícil empieza antes de hablar"
                class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                src="images/escritura-nueva-04-conversacion.jpg">
         </div>
-        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-bold mb-4 block">Conversaciones y Liderazgo</span>
-        <h3 class="text-3xl font-medium text-primary mb-6 leading-tight font-headline">
+        <span class="text-on-surface-variant text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold mb-2 md:mb-4 block">Conversaciones y Liderazgo</span>
+        <h3 class="text-base sm:text-lg md:text-3xl font-medium text-primary mb-3 md:mb-6 leading-tight font-headline">
           La conversación difícil empieza antes de hablar
         </h3>
-        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+        <p class="text-on-surface-variant font-light text-xs md:text-sm mb-4 md:mb-8 leading-relaxed hidden sm:block">
           Muchas veces no evitamos una conversación por lo que pasó, sino por todo lo que imaginamos que podría pasar.
         </p>
         <a class="mt-auto border-b border-primary/20 pb-2 w-max text-[11px] font-bold tracking-widest text-primary hover:border-cta-accent transition-colors hover:text-secondary" href="escritura-la-conversacion-dificil-empieza-antes-de-hablar.html">
@@ -286,11 +313,11 @@
   <!-- ============================================================
        SECCIÓN 4 — Newsletter
        ============================================================ -->
-  <section class="mt-40 px-12 max-w-7xl mx-auto">
-    <div class="bg-brand-nav-footer p-20 md:p-32 flex flex-col items-center text-center">
-      <span class="material-symbols-outlined text-cta-accent text-5xl mb-8">mail</span>
-      <h2 class="text-5xl font-medium text-white mb-6 font-headline">Perspectivas Semanales</h2>
-      <p class="text-white/70 max-w-xl mb-12 font-light text-lg">
+  <section class="mt-20 md:mt-40 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="bg-brand-nav-footer p-8 sm:p-12 md:p-20 lg:p-32 flex flex-col items-center text-center">
+      <span class="material-symbols-outlined text-cta-accent text-4xl md:text-5xl mb-4 md:mb-8">mail</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-4 md:mb-6 font-headline">Perspectivas Semanales</h2>
+      <p class="text-white/70 max-w-xl mb-8 md:mb-12 font-light text-sm md:text-lg">
         Suscribite para recibir estrategias de liderazgo y reflexiones exclusivas directo en tu bandeja de entrada.
       </p>
       <form action="https://formspree.io/f/mvkpoykg" method="POST"

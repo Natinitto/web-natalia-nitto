@@ -123,7 +123,8 @@
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
   body { font-family: 'Inter', sans-serif; }
-  h1, h2, h3, .display-text { font-family: 'Cormorant Garamond', serif; }
+  h1, h2, h3, .display-text, .font-headline { font-family: 'Cormorant Garamond', serif; }
+  .text-editorial { letter-spacing: -0.01em; line-height: 1.1; }
 </style>
 </head>
 
@@ -139,7 +140,28 @@
     <!-- LINKS DESKTOP (visibles desde 768px+) -->
     <div class="hidden md:flex items-center gap-6 font-['Inter'] text-sm tracking-normal">
       <a class="text-brand-primary-btn border-b border-brand-primary-btn pb-0.5" href="index.html">Home</a>
-      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="servicios.html">Servicios</a>
+      <div class="relative group">
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200 flex items-center gap-1 cursor-pointer" href="servicios.html">
+        Servicios
+        <span class="material-symbols-outlined text-base">expand_more</span>
+      </a>
+      <!-- Dropdown desktop: aparece al hover -->
+      <div class="absolute top-full left-0 hidden group-hover:block bg-brand-nav-footer border border-primary-container min-w-[260px] shadow-xl z-50 pt-1">
+      <a href="servicios.html#coaching-individual" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Coaching Individual
+      </a>
+      <a href="servicios.html#coaching-organizaciones" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Coaching para Organizaciones
+      </a>
+      <a href="servicios.html#asesoria-estrategica" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Asesoría Estratégica
+      </a>
+      <a href="servicios.html#coaching-sistemico" class="block px-5 py-3 text-white/70 hover:text-white hover:bg-white/5 transition-colors text-sm flex items-center justify-between gap-2">
+        <span>Coaching Sistémico</span>
+        <span class="text-[9px] text-cta-accent uppercase tracking-wider font-bold">Pronto</span>
+      </a>
+      </div>
+    </div>
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="escrituras.html">Escrituras</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="sobremi.html">Sobre mí</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="contacto.html">Contacto</a>
@@ -167,6 +189,12 @@
     <div class="px-6 py-6 flex flex-col gap-4 font-['Inter'] text-base">
       <a class="text-brand-primary-btn font-medium" href="index.html">Home</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+      <div class="pl-4 flex flex-col gap-3 -mt-1 mb-1 border-l-2 border-brand-primary-btn/30">
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#coaching-individual">→ Coaching Individual</a>
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#coaching-organizaciones">→ Coaching para Organizaciones</a>
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#asesoria-estrategica">→ Asesoría Estratégica</a>
+        <a class="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2" href="servicios.html#coaching-sistemico">→ Coaching Sistémico <span class="text-[9px] text-cta-accent uppercase tracking-wider font-bold">Pronto</span></a>
+      </div>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="escrituras.html">Escrituras</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
@@ -207,35 +235,47 @@
   <!-- ============================================================
        SECCIÓN 1 — Hero
        ============================================================ -->
-  <section class="min-h-[800px] flex items-center py-20 px-8">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+  <section class="min-h-[600px] lg:min-h-[800px] flex items-center py-16 lg:py-20 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
       <div class="lg:col-span-7">
-        <span class="inline-block mb-8 text-secondary font-semibold uppercase tracking-[0.2em] text-xs">
+        <span class="inline-block mb-6 lg:mb-8 text-secondary font-semibold uppercase tracking-[0.2em] text-xs">
           El foco no está en motivarte. Está en que decidas.
         </span>
-        <h1 class="text-3xl lg:text-5xl font-semibold text-primary leading-tight mb-8">
-          Tu próximo paso, con claridad.<br>
-          <span class="text-secondary italic">Incluso cuando el contexto no espera.</span>
-        </h1>
-        <p class="text-lg lg:text-xl text-on-surface-variant font-light leading-relaxed mb-12 max-w-2xl">
+
+        <!-- Wrapper: en mobile es flex (título + foto chica), en lg es block -->
+        <div class="flex items-start gap-5 lg:block mb-8">
+          <h1 class="text-2xl sm:text-3xl lg:text-5xl font-medium text-primary text-editorial font-headline flex-1">
+            Tu próximo paso, con claridad.<br>
+            <span class="text-secondary italic">Incluso cuando el contexto no espera.</span>
+          </h1>
+
+          <!-- Foto CHICA — solo en mobile (< lg) -->
+          <img alt="Natalia Nitto"
+               class="lg:hidden w-24 sm:w-32 aspect-[4/5] object-cover grayscale-[20%] rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] shadow-lg flex-shrink-0"
+               src="images/natalia-home.jpg">
+        </div>
+
+        <p class="text-base lg:text-xl text-on-surface-variant font-light leading-relaxed mb-8 lg:mb-12 max-w-2xl">
           Acompaño a personas, líderes y organizaciones a ordenar el ruido, recuperar criterio y tomar decisiones conscientes en momentos de cambio, presión o incertidumbre.
         </p>
         <div class="space-y-4">
-          <div class="flex flex-wrap gap-6">
+          <div class="flex flex-wrap gap-4 lg:gap-6">
             <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
                target="_blank" rel="noopener noreferrer"
-               class="inline-block bg-brand-primary-btn text-brand-primary-text px-8 py-4 text-sm font-semibold tracking-wide hover:opacity-90 transition-all">
+               class="inline-block bg-brand-primary-btn text-brand-primary-text px-6 lg:px-8 py-3 lg:py-4 text-sm font-semibold tracking-wide hover:opacity-90 transition-all">
               Agendar una conversación
             </a>
             <a href="sobremi.html"
-               class="inline-block border border-brand-nav-footer text-primary px-8 py-4 text-sm font-semibold tracking-wide hover:bg-surface-container-low transition-all">
+               class="inline-block border border-brand-nav-footer text-primary px-6 lg:px-8 py-3 lg:py-4 text-sm font-semibold tracking-wide hover:bg-surface-container-low transition-all">
               Conocer mi enfoque
             </a>
           </div>
           <p class="text-xs text-on-surface-variant/70 italic ml-1">"Una conversación puede ordenar más de lo que estás pensando."</p>
         </div>
       </div>
-      <div class="lg:col-span-5 relative aspect-[4/5]">
+
+      <!-- Foto GRANDE — solo en desktop (lg+) -->
+      <div class="hidden lg:block lg:col-span-5 relative aspect-[4/5]">
         <img alt="Natalia Nitto"
              class="inset-0 w-full h-full object-cover grayscale-[20%] rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] relative mx-auto shadow-2xl"
              src="images/natalia-home.jpg">
@@ -246,9 +286,11 @@
   <!-- ============================================================
        SECCIÓN 2 — Diferenciación / Enfoque
        ============================================================ -->
-  <section class="py-32 px-8 bg-surface-container-low">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-      <div class="order-2 lg:order-1 relative">
+  <section class="py-20 lg:py-32 px-6 lg:px-8 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Foto GRANDE — solo desktop, columna izquierda -->
+      <div class="hidden lg:block order-1 relative">
         <div class="aspect-square">
           <img alt="Natalia Nitto"
                class="w-full h-full object-cover opacity-90 rounded-[40%_60%_70%_30%_/_40%_50%_60%_40%] shadow-2xl"
@@ -256,9 +298,24 @@
                src="images/natalia-workspace.png">
         </div>
       </div>
-      <div class="order-1 lg:order-2 lg:pl-12">
-        <h2 class="text-4xl font-semibold text-primary mb-8">Un enfoque que no viene de la teoría</h2>
-        <div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+
+      <!-- Texto (derecha en desktop, todo en mobile) -->
+      <div class="lg:order-2 lg:pl-12">
+
+        <!-- Wrapper: en mobile flex (h2 + foto chica), en lg block -->
+        <div class="flex items-start gap-5 lg:block mb-6 lg:mb-8">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary flex-1">
+            Un enfoque que no viene de la teoría
+          </h2>
+
+          <!-- Foto CHICA — solo mobile -->
+          <img alt="Natalia Nitto"
+               class="lg:hidden w-24 sm:w-32 aspect-square object-cover opacity-90 rounded-[40%_60%_70%_30%_/_40%_50%_60%_40%] shadow-lg flex-shrink-0"
+               style="object-position: 50% 35%;"
+               src="images/natalia-workspace.png">
+        </div>
+
+        <div class="space-y-6 text-on-surface-variant leading-relaxed text-base lg:text-lg">
           <p>Mi trabajo no se basa en marcos conceptuales rígidos, sino en la realidad dinámica de la toma de decisiones. Entiendo que el liderazgo no es una línea recta, sino un ejercicio constante de equilibrio y criterio.</p>
           <p>Aplico el coaching ejecutivo a situaciones cotidianas reales, integrando el pensamiento estratégico con resultados sostenibles en el tiempo. Buscamos no solo la resolución inmediata, sino el desarrollo de una capacidad de respuesta profunda ante la complejidad.</p>
         </div>
@@ -362,46 +419,46 @@
         <a class="text-xs font-bold uppercase tracking-widest text-secondary underline underline-offset-8" href="escrituras.html">Ver todas las notas</a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
 
         <a href="escritura-no-siempre-necesitas-mejorar-vos.html" class="group cursor-pointer block">
-          <div class="aspect-[3/4] mb-6 overflow-hidden bg-surface-container-high">
+          <div class="aspect-[3/4] mb-4 lg:mb-6 overflow-hidden bg-surface-container-high">
             <img alt="No siempre necesitás mejorar vos"
                  class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
                  src="images/escritura-nueva-01-mejorar.jpg">
           </div>
-          <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">No siempre necesitás mejorar vos.</h3>
-          <p class="text-xs text-on-surface-variant uppercase tracking-widest">Desarrollo Profesional</p>
+          <h3 class="text-sm lg:text-lg font-bold mb-2 leading-tight group-hover:text-primary transition-colors">No siempre necesitás mejorar vos.</h3>
+          <p class="text-[10px] lg:text-xs text-on-surface-variant uppercase tracking-widest">Desarrollo Profesional</p>
         </a>
 
         <a href="escritura-la-autonomia-no-se-aprende-esperando.html" class="group cursor-pointer block">
-          <div class="aspect-[3/4] mb-6 overflow-hidden bg-surface-container-high">
+          <div class="aspect-[3/4] mb-4 lg:mb-6 overflow-hidden bg-surface-container-high">
             <img alt="La autonomía no se aprende esperando"
                  class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
                  src="images/escritura-nueva-02-autonomia.jpg">
           </div>
-          <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">La autonomía no se aprende esperando</h3>
-          <p class="text-xs text-on-surface-variant uppercase tracking-widest">Liderazgo y Autonomía</p>
+          <h3 class="text-sm lg:text-lg font-bold mb-2 leading-tight group-hover:text-primary transition-colors">La autonomía no se aprende esperando</h3>
+          <p class="text-[10px] lg:text-xs text-on-surface-variant uppercase tracking-widest">Liderazgo y Autonomía</p>
         </a>
 
         <a href="escritura-no-automatices-el-desorden.html" class="group cursor-pointer block">
-          <div class="aspect-[3/4] mb-6 overflow-hidden bg-surface-container-high">
+          <div class="aspect-[3/4] mb-4 lg:mb-6 overflow-hidden bg-surface-container-high">
             <img alt="No automatices el desorden"
                  class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
                  src="images/escritura-nueva-03-desorden.jpg">
           </div>
-          <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">No automatices el desorden</h3>
-          <p class="text-xs text-on-surface-variant uppercase tracking-widest">IA y Gestión</p>
+          <h3 class="text-sm lg:text-lg font-bold mb-2 leading-tight group-hover:text-primary transition-colors">No automatices el desorden</h3>
+          <p class="text-[10px] lg:text-xs text-on-surface-variant uppercase tracking-widest">IA y Gestión</p>
         </a>
 
         <a href="escritura-la-conversacion-dificil-empieza-antes-de-hablar.html" class="group cursor-pointer block">
-          <div class="aspect-[3/4] mb-6 overflow-hidden bg-surface-container-high">
+          <div class="aspect-[3/4] mb-4 lg:mb-6 overflow-hidden bg-surface-container-high">
             <img alt="La conversación difícil empieza antes de hablar"
                  class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
                  src="images/escritura-nueva-04-conversacion.jpg">
           </div>
-          <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">La conversación difícil empieza antes de hablar</h3>
-          <p class="text-xs text-on-surface-variant uppercase tracking-widest">Conversaciones y Liderazgo</p>
+          <h3 class="text-sm lg:text-lg font-bold mb-2 leading-tight group-hover:text-primary transition-colors">La conversación difícil empieza antes de hablar</h3>
+          <p class="text-[10px] lg:text-xs text-on-surface-variant uppercase tracking-widest">Conversaciones y Liderazgo</p>
         </a>
 
       </div>

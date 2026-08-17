@@ -191,7 +191,28 @@
 
     <div class="hidden md:flex items-center gap-6 font-['Inter'] text-sm tracking-normal">
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="index.html">Home</a>
-      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="servicios.html">Servicios</a>
+      <div class="relative group">
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200 flex items-center gap-1 cursor-pointer" href="servicios.html">
+        Servicios
+        <span class="material-symbols-outlined text-base">expand_more</span>
+      </a>
+      <!-- Dropdown desktop: aparece al hover -->
+      <div class="absolute top-full left-0 hidden group-hover:block bg-brand-nav-footer border border-primary-container min-w-[260px] shadow-xl z-50 pt-1">
+      <a href="servicios.html#coaching-individual" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Coaching Individual
+      </a>
+      <a href="servicios.html#coaching-organizaciones" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Coaching para Organizaciones
+      </a>
+      <a href="servicios.html#asesoria-estrategica" class="block px-5 py-3 text-white hover:text-brand-primary-btn hover:bg-white/5 transition-colors text-sm border-b border-primary-container/40">
+        Asesoría Estratégica
+      </a>
+      <a href="servicios.html#coaching-sistemico" class="block px-5 py-3 text-white/70 hover:text-white hover:bg-white/5 transition-colors text-sm flex items-center justify-between gap-2">
+        <span>Coaching Sistémico</span>
+        <span class="text-[9px] text-cta-accent uppercase tracking-wider font-bold">Pronto</span>
+      </a>
+      </div>
+    </div>
       <a class="text-brand-primary-btn border-b border-brand-primary-btn pb-0.5" href="escrituras.html">Escrituras</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="sobremi.html">Sobre mí</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="contacto.html">Contacto</a>
@@ -216,6 +237,12 @@
     <div class="px-6 py-6 flex flex-col gap-4 font-['Inter'] text-base">
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+      <div class="pl-4 flex flex-col gap-3 -mt-1 mb-1 border-l-2 border-brand-primary-btn/30">
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#coaching-individual">→ Coaching Individual</a>
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#coaching-organizaciones">→ Coaching para Organizaciones</a>
+        <a class="text-white/80 hover:text-brand-primary-btn transition-colors text-sm" href="servicios.html#asesoria-estrategica">→ Asesoría Estratégica</a>
+        <a class="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-2" href="servicios.html#coaching-sistemico">→ Coaching Sistémico <span class="text-[9px] text-cta-accent uppercase tracking-wider font-bold">Pronto</span></a>
+      </div>
       <a class="text-brand-primary-btn font-medium" href="escrituras.html">Escrituras</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
       <a class="text-white hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
