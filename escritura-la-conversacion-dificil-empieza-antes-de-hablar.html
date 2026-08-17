@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>La conversación difícil empieza antes de hablar | Natalia Nitto</title>
+<meta name="description" content="Muchas conversaciones difíciles empiezan mucho antes, cuando interpretamos en silencio. Reflexión sobre liderazgo, supuestos y la diferencia entre lo que pasó y lo que creemos que pasó.">
+<meta name="author" content="Natalia Nitto">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "La conversación difícil empieza antes de hablar",
+  "description": "Muchas conversaciones difíciles empiezan mucho antes, cuando interpretamos en silencio. Reflexión sobre liderazgo, supuestos y la diferencia entre lo que pasó y lo que creemos que pasó.",
+  "author": {
+    "@type": "Person",
+    "name": "Natalia Nitto",
+    "url": "https://www.linkedin.com/in/natalianitto/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Natalia Nitto"
+  },
+  "articleSection": "Conversaciones y Liderazgo"
+}
+</script>
+
+<!-- Tailwind config -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "brand-primary-btn": "#E9C8A6",
+          "brand-primary-text": "#1F2124",
+          "brand-nav-footer": "#2D4057",
+          "cta-accent": "#E9C8A6",
+
+          "background": "#F4F2EF",
+          "surface": "#F4F2EF",
+          "surface-bright": "#fbf9fb",
+          "surface-dim": "#dbd9db",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#efedef",
+          "surface-container": "#efedef",
+          "surface-container-high": "#e9e7ea",
+          "surface-container-highest": "#e4e2e4",
+          "surface-variant": "#e4e2e4",
+          "surface-tint": "#4d6078",
+
+          "primary": "#162a40",
+          "primary-container": "#2d4057",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#98acc7",
+
+          "secondary": "#735a3e",
+          "secondary-container": "#fcdab7",
+
+          "on-surface": "#1b1c1d",
+          "on-surface-variant": "#44474d",
+          "on-background": "#1b1c1d",
+
+          "outline": "#74777d",
+          "outline-variant": "#c4c6cd"
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        fontFamily: {
+          "body": ["Inter"],
+          "headline": ["Cormorant Garamond"]
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-headline { font-family: 'Cormorant Garamond', serif; }
+  .text-editorial { letter-spacing: -0.01em; line-height: 1.1; }
+
+  /* Estilos del artículo — DESKTOP */
+  .article-body p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    font-size: 1.0625rem;
+    color: #1b1c1d;
+  }
+  .article-body p:first-of-type {
+    font-size: 1.1875rem;
+    color: #162a40;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .article-body strong {
+    color: #162a40;
+    font-weight: 500;
+  }
+  .pullquote {
+    border-left: 3px solid #E9C8A6;
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.625rem !important;
+    font-style: normal !important;
+    color: #162a40 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.01em;
+    font-weight: 500 !important;
+  }
+  .progression {
+    background: #efedef;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    border-left: 3px solid #2D4057;
+  }
+  .progression p {
+    margin-bottom: 0.6rem !important;
+    font-size: 1.0625rem !important;
+    font-weight: 400 !important;
+    color: #44474d !important;
+    line-height: 1.55 !important;
+  }
+  .progression p:last-child { margin-bottom: 0 !important; }
+  .progression strong {
+    color: #162a40;
+    font-weight: 500;
+  }
+  /* Voz de personaje / preguntas contrapuestas */
+  .voz {
+    font-style: italic;
+    color: #44474d;
+    padding-left: 1.25rem;
+    border-left: 2px solid #c4c6cd;
+    margin: 1rem 0 !important;
+    display: block;
+  }
+  /* Lista de asunciones apilada (para "Cuando asumimos..." y "Cargados de...") */
+  .article-body .apilado {
+    margin-bottom: 0.5rem !important;
+    padding-left: 1rem;
+    color: #44474d;
+    line-height: 1.5;
+  }
+  .article-body .apilado + p:not(.apilado) {
+    margin-top: 1.5rem;
+  }
+
+  /* MOBILE — todo más chico y compacto */
+  @media (max-width: 768px) {
+    .article-body p {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .article-body p:first-of-type {
+      font-size: 1.0625rem;
+      line-height: 1.55;
+    }
+    .pullquote {
+      font-size: 1.25rem !important;
+      padding: 0.3rem 0 0.3rem 1.1rem;
+      margin: 1.5rem 0;
+      line-height: 1.35 !important;
+    }
+    .progression {
+      padding: 1.25rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .progression p {
+      font-size: 0.9375rem !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0.5rem !important;
+    }
+    .voz {
+      padding-left: 0.9rem;
+      margin: 0.75rem 0 !important;
+    }
+    .article-body .apilado {
+      padding-left: 0.75rem;
+    }
+  }
+</style>
+</head>
+
+<body class="bg-background text-on-background antialiased">
+
+<nav class="fixed top-0 w-full z-50 bg-brand-nav-footer border-b border-primary-container">
+  <div class="flex justify-between items-center px-6 py-4 w-full max-w-[1200px] mx-auto">
+    <a class="font-headline text-2xl text-white font-normal whitespace-nowrap" href="index.html">Natalia Nitto</a>
+
+    <div class="hidden md:flex items-center gap-6 font-['Inter'] text-sm tracking-normal">
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="servicios.html">Servicios</a>
+      <a class="text-brand-primary-btn border-b border-brand-primary-btn pb-0.5" href="escrituras.html">Escrituras</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="contacto.html">Contacto</a>
+    </div>
+
+    <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+       target="_blank" rel="noopener noreferrer"
+       class="hidden md:inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-2.5 text-sm font-medium transition-all rounded-none font-['Inter'] whitespace-nowrap hover:opacity-90">
+      Agendar una conversación
+    </a>
+
+    <button id="mobile-menu-toggle"
+            class="md:hidden text-white p-2 -mr-2"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+      <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-nav-footer border-t border-primary-container">
+    <div class="px-6 py-6 flex flex-col gap-4 font-['Inter'] text-base">
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+      <a class="text-brand-primary-btn font-medium" href="escrituras.html">Escrituras</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
+      <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+         target="_blank" rel="noopener noreferrer"
+         class="mt-4 inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-3 text-sm font-medium text-center rounded-none font-['Inter'] hover:opacity-90 transition-all">
+        Agendar una conversación
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function() {
+    const btn = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    if (!btn || !menu || !icon) return;
+    btn.addEventListener('click', function() {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        icon.textContent = 'close';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+</script>
+
+<main class="pt-32 pb-20">
+
+  <article class="px-6 md:px-12 max-w-3xl mx-auto">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-10 text-xs tracking-[0.15em] uppercase text-on-surface-variant">
+      <a href="escrituras.html" class="hover:text-secondary transition-colors">Escrituras</a>
+      <span class="mx-2 text-outline-variant">/</span>
+      <span>Conversaciones y Liderazgo</span>
+    </nav>
+
+    <!-- Imagen acento -->
+    <div class="mb-12 overflow-hidden">
+      <img alt="La conversación difícil empieza antes de hablar"
+           class="w-full aspect-[16/9] object-cover"
+           src="images/escritura-nueva-04-conversacion.jpg">
+    </div>
+
+    <!-- Header -->
+    <header class="mb-10">
+      <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.25em] font-bold mb-5 block">
+        Conversaciones y Liderazgo
+      </span>
+      <h1 class="text-3xl md:text-4xl font-medium text-primary text-editorial mb-5 font-headline">
+        La conversación difícil empieza antes de hablar.
+      </h1>
+      <p class="text-base md:text-lg text-on-surface-variant font-light leading-relaxed italic">
+        Muchas veces no evitamos una conversación por lo que pasó, sino por todo lo que imaginamos que podría pasar.
+      </p>
+      <div class="w-16 h-0.5 bg-cta-accent mt-8"></div>
+    </header>
+
+    <!-- Cuerpo del artículo -->
+    <div class="article-body">
+
+      <!-- Apertura como pullquote (2 líneas juntas) -->
+      <p class="pullquote">
+        Muchas conversaciones difíciles no empiezan cuando hablamos con el otro. Empiezan mucho antes, cuando interpretamos en silencio.
+      </p>
+
+      <!-- Lista de asunciones (6 líneas apiladas, sin ser bloque de progresión) -->
+      <p>Cuando asumimos que el otro se va a enojar.</p>
+      <p class="apilado">Que no va a entender.</p>
+      <p class="apilado">Que nos va a juzgar.</p>
+      <p class="apilado">Que estamos exagerando.</p>
+      <p class="apilado">Que es mejor esperar.</p>
+      <p class="apilado">Que "no es para tanto".</p>
+
+      <p>
+        Y entonces, antes de decir una sola palabra, ya llegamos a la conversación cargados.
+      </p>
+
+      <!-- Segunda lista corta (4 "cargas") -->
+      <p>Cargados de supuestos.</p>
+      <p class="apilado">De miedos.</p>
+      <p class="apilado">De historias previas.</p>
+      <p class="apilado">De conversaciones que todavía no ocurrieron, pero que en nuestra mente ya salieron mal.</p>
+
+      <!-- Tesis central: pullquote (2 líneas juntas) -->
+      <p class="pullquote">
+        No evitamos conversaciones difíciles solo por falta de valentía. Muchas veces las evitamos porque ya llegamos a ellas llenos de interpretaciones.
+      </p>
+
+      <p>
+        Y eso cambia todo.
+      </p>
+
+      <p>
+        Porque <strong>cuando interpreto antes de preguntar</strong>, dejo de ver al otro como interlocutor y empiezo a verlo como amenaza. <strong>Cuando anticipo su reacción</strong>, dejo de escuchar lo que realmente puede decir. <strong>Cuando me convenzo de que "seguro va a pasar algo"</strong>, empiezo a actuar desde una defensa que quizás no era necesaria.
+      </p>
+
+      <p>
+        En liderazgo, esto tiene un impacto enorme. Porque muchas conversaciones que podrían <strong>ordenar expectativas, aclarar criterios, poner límites o cuidar vínculos</strong>, terminan postergándose.
+      </p>
+
+      <p>
+        No porque no sean importantes. Sino porque internamente <strong>ya se volvieron demasiado grandes.</strong>
+      </p>
+
+      <!-- Observación clínica de Natalia: pullquote -->
+      <p class="pullquote">
+        Antes de actuar, muchas veces la persona conversa consigo misma desde sus miedos, supuestos o hábitos anteriores.
+      </p>
+
+      <p>
+        Y ahí aparece una pregunta clave:
+      </p>
+
+      <!-- Pregunta clave: voz destacada -->
+      <p class="voz">¿Estoy respondiendo a lo que realmente pasó, o a lo que interpreté que pasó?</p>
+
+      <p>
+        A veces, el primer paso no es "animarse a hablar". Es <strong>detenerse antes y revisar:</strong>
+      </p>
+
+      <!-- 4 preguntas para hacerse: bloque de progresión -->
+      <div class="progression">
+        <p>Qué <strong>sé concretamente.</strong></p>
+        <p>Qué estoy <strong>suponiendo.</strong></p>
+        <p>Qué <strong>necesito preguntar</strong> antes de concluir.</p>
+        <p>Qué <strong>conversación estoy teniendo en mi cabeza</strong> antes de tenerla con la otra persona.</p>
+      </div>
+
+      <p>
+        Porque una conversación difícil no siempre necesita empezar con más firmeza.
+      </p>
+
+      <!-- Cierre pullquote (2 líneas juntas) -->
+      <p class="pullquote">
+        A veces necesita empezar con menos interpretación. Y más presencia.
+      </p>
+
+      <!-- Pregunta final abierta: voz -->
+      <p class="voz">¿Te pasó alguna vez que la conversación ya te pesaba antes de tenerla?</p>
+
+    </div>
+
+    <!-- Footer del artículo -->
+    <footer class="mt-16 pt-10 border-t border-outline-variant/40">
+      <div class="mb-8">
+        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.25em] font-bold mb-4 block">
+          Publicado originalmente en
+        </span>
+        <a href="https://www.linkedin.com/posts/natalianitto_coachingejecutivo-lideresentransicion-businessmanagement-activity-7467188310424227840--Cx8"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 bg-primary text-white px-6 py-3 text-sm font-medium hover:bg-primary-container transition-colors">
+          <span class="material-symbols-outlined text-lg">open_in_new</span>
+          Ver el post original en LinkedIn
+        </a>
+      </div>
+
+      <a href="escrituras.html"
+         class="inline-flex items-center gap-2 text-secondary hover:text-primary text-sm font-medium transition-colors">
+        <span class="material-symbols-outlined text-lg">arrow_back</span>
+        Volver a Escrituras
+      </a>
+    </footer>
+
+  </article>
+
+</main>
+
+<!-- FOOTER del sitio -->
+<footer class="bg-brand-nav-footer text-white py-16">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+      <div>
+        <p class="font-headline text-2xl mb-4">Natalia Nitto</p>
+        <p class="text-sm text-on-primary-container font-light leading-relaxed">
+          Coaching ejecutivo y consultoría estratégica para líderes que necesitan claridad para decidir.
+        </p>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-[0.25em] font-bold mb-4 text-brand-primary-btn">Navegación</p>
+        <div class="flex flex-col gap-2 text-sm">
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="escrituras.html">Escrituras</a>
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-[0.25em] font-bold mb-4 text-brand-primary-btn">Redes</p>
+        <div class="flex flex-col gap-2 text-sm">
+          <a href="https://www.linkedin.com/in/natalianitto/" target="_blank" rel="noopener noreferrer"
+             class="text-on-primary-container hover:text-brand-primary-btn transition-colors">LinkedIn</a>
+          <a href="https://www.instagram.com/entrelcaosyelcambio/" target="_blank" rel="noopener noreferrer"
+             class="text-on-primary-container hover:text-brand-primary-btn transition-colors">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-primary-container pt-6 text-xs text-on-primary-container">
+      © 2026 Natalia Nitto · Coaching Ejecutivo y Consultoría Estratégica
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

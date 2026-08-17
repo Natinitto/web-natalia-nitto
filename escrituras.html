@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Escrituras | Natalia Nitto</title>
+<meta name="description" content="Reflexiones y notas de Natalia Nitto sobre liderazgo, coaching ejecutivo, toma de decisiones, gestión de equipos y desarrollo profesional. Artículos publicados originalmente en LinkedIn.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- ============================================================
+     CONFIGURACIÓN DE TAILWIND (Design Tokens)
+     MISMOS TOKENS QUE HOME.HTML Y SERVICIOS.HTML — mantener sincronizados.
+     ============================================================ -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          // Paleta de marca principal
+          "brand-primary-btn": "#E9C8A6",
+          "brand-primary-text": "#1F2124",
+          "brand-nav-footer": "#2D4057",
+          "cta-accent": "#E9C8A6",
+
+          // Tokens Material
+          "background": "#F4F2EF",
+          "surface": "#F4F2EF",
+          "surface-bright": "#fbf9fb",
+          "surface-dim": "#dbd9db",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#efedef",
+          "surface-container": "#efedef",
+          "surface-container-high": "#e9e7ea",
+          "surface-container-highest": "#e4e2e4",
+          "surface-variant": "#e4e2e4",
+          "surface-tint": "#4d6078",
+          "inverse-surface": "#303032",
+          "inverse-on-surface": "#f2f0f2",
+
+          "primary": "#162a40",
+          "primary-container": "#2d4057",
+          "primary-fixed": "#d2e4ff",
+          "primary-fixed-dim": "#b4c8e4",
+          "inverse-primary": "#b4c8e4",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#98acc7",
+          "on-primary-fixed": "#071d32",
+          "on-primary-fixed-variant": "#35485f",
+
+          "secondary": "#735a3e",
+          "secondary-container": "#fcdab7",
+          "secondary-fixed": "#ffddba",
+          "secondary-fixed-dim": "#e1c19f",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#775e42",
+          "on-secondary-fixed": "#291803",
+          "on-secondary-fixed-variant": "#594329",
+
+          "tertiary": "#392504",
+          "tertiary-container": "#513b17",
+          "tertiary-fixed": "#ffddaf",
+          "tertiary-fixed-dim": "#e3c192",
+
+          "on-surface": "#1b1c1d",
+          "on-surface-variant": "#44474d",
+          "on-background": "#1b1c1d",
+
+          "outline": "#74777d",
+          "outline-variant": "#c4c6cd",
+
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-error-container": "#93000a"
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        fontFamily: {
+          "body": ["Inter"],
+          "headline": ["Cormorant Garamond"]
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-headline { font-family: 'Cormorant Garamond', serif; }
+  .text-editorial { letter-spacing: -0.01em; line-height: 1.1; }
+</style>
+</head>
+
+<body class="bg-background text-on-surface">
+
+<!-- ============================================================
+     NAV — Idéntico al resto (cambia solo el link activo)
+     ============================================================ -->
+<nav class="fixed top-0 w-full z-50 bg-brand-nav-footer border-b border-primary-container">
+  <div class="flex justify-between items-center px-6 py-4 w-full max-w-[1200px] mx-auto">
+    <a class="font-headline text-2xl text-white font-normal whitespace-nowrap" href="index.html">Natalia Nitto</a>
+
+    <!-- LINKS DESKTOP (visibles desde 768px+) -->
+    <div class="hidden md:flex items-center gap-6 font-['Inter'] text-sm tracking-normal">
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="servicios.html">Servicios</a>
+      <a class="text-brand-primary-btn border-b border-brand-primary-btn pb-0.5" href="escrituras.html">Escrituras</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="contacto.html">Contacto</a>
+    </div>
+
+    <!-- CTA DESKTOP (visible desde 768px+) -->
+    <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+       target="_blank" rel="noopener noreferrer"
+       class="hidden md:inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-2.5 text-sm font-medium transition-all rounded-none font-['Inter'] whitespace-nowrap hover:opacity-90">
+      Agendar una conversación
+    </a>
+
+    <!-- BOTÓN HAMBURGUESA (solo mobile, se oculta desde 768px+) -->
+    <button id="mobile-menu-toggle"
+            class="md:hidden text-white p-2 -mr-2"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+      <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+    </button>
+  </div>
+
+  <!-- MENÚ MOBILE DESPLEGABLE (dropdown desde arriba) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-nav-footer border-t border-primary-container">
+    <div class="px-6 py-6 flex flex-col gap-4 font-['Inter'] text-base">
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+      <a class="text-brand-primary-btn font-medium" href="escrituras.html">Escrituras</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
+
+      <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+         target="_blank" rel="noopener noreferrer"
+         class="mt-4 inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-3 text-sm font-medium text-center rounded-none font-['Inter'] hover:opacity-90 transition-all">
+        Agendar una conversación
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Script del menú mobile (toggle abrir/cerrar) -->
+<script>
+  (function() {
+    const btn = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    if (!btn || !menu || !icon) return;
+    btn.addEventListener('click', function() {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        icon.textContent = 'close';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+</script>
+
+<main class="pt-40 pb-20">
+
+  <!-- ============================================================
+       SECCIÓN 1 — Hero
+       ============================================================ -->
+  <header class="px-12 max-w-7xl mx-auto mb-24 text-center">
+    <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.3em] font-bold mb-6 block">Diario Estratégico</span>
+    <h1 class="text-5xl md:text-7xl font-medium text-primary text-editorial mb-8">Escrituras</h1>
+    <div class="w-20 h-0.5 bg-cta-accent mx-auto"></div>
+    <p class="mt-10 text-on-surface-variant max-w-2xl font-light text-lg leading-relaxed mx-auto">
+      Reflexiones sobre liderazgo, toma de decisiones y la construcción de equipos de alto rendimiento. Un espacio para cuestionar lo obvio y diseñar lo extraordinario.
+    </p>
+  </header>
+
+  <!-- ============================================================
+       SECCIÓN 2 — Artículo Destacado
+       Nota más reciente: "Mi mayor error como líder..."
+       ============================================================ -->
+  <section class="px-12 max-w-7xl mx-auto mb-32">
+    <article class="grid grid-cols-1 md:grid-cols-12 gap-0 bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+      <div class="md:col-span-7 relative h-[550px] overflow-hidden">
+        <img alt="No siempre necesitás mejorar vos"
+             class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+             src="images/escritura-nueva-01-mejorar.jpg">
+      </div>
+      <div class="md:col-span-5 p-12 md:p-16 flex flex-col justify-center bg-surface-container-low border-l border-primary/5">
+        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-bold mb-8 block">Desarrollo Profesional</span>
+        <h2 class="text-5xl font-medium text-primary mb-8 leading-[1.1] font-headline">
+          No siempre necesitás mejorar vos.
+        </h2>
+        <p class="text-on-surface-variant mb-12 font-light text-lg leading-relaxed">
+          A veces, el verdadero desafío no está en tu capacidad, sino en las condiciones y expectativas que estás intentando sostener.
+        </p>
+        <a class="inline-flex items-center gap-4 text-primary font-bold tracking-widest text-[11px] group/link hover:text-secondary transition-colors" href="escritura-no-siempre-necesitas-mejorar-vos.html">
+          LEER ARTÍCULO
+          <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-2">arrow_right_alt</span>
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 3 — Grilla de Artículos (3 columnas)
+       ============================================================ -->
+  <section class="px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+
+      <!-- Artículo 1 grilla: La autonomía no se aprende esperando -->
+      <article class="flex flex-col group">
+        <div class="aspect-[4/5] bg-white mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
+          <img alt="La autonomía no se aprende esperando"
+               class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+               src="images/escritura-nueva-02-autonomia.jpg">
+        </div>
+        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-bold mb-4 block">Liderazgo y Autonomía</span>
+        <h3 class="text-3xl font-medium text-primary mb-6 leading-tight font-headline">
+          La autonomía no se aprende esperando
+        </h3>
+        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+          Se construye tomando decisiones, con criterios claros, conversaciones y espacio para equivocarse.
+        </p>
+        <a class="mt-auto border-b border-primary/20 pb-2 w-max text-[11px] font-bold tracking-widest text-primary hover:border-cta-accent transition-colors hover:text-secondary" href="escritura-la-autonomia-no-se-aprende-esperando.html">
+          DESCUBRIR
+        </a>
+      </article>
+
+      <!-- Artículo 2 grilla: No automatices el desorden -->
+      <article class="flex flex-col group">
+        <div class="aspect-[4/5] bg-white mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
+          <img alt="No automatices el desorden"
+               class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+               src="images/escritura-nueva-03-desorden.jpg">
+        </div>
+        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-bold mb-4 block">IA y Gestión</span>
+        <h3 class="text-3xl font-medium text-primary mb-6 leading-tight font-headline">
+          No automatices el desorden
+        </h3>
+        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+          Antes de incorporar IA, revisá procesos, roles y decisiones. La tecnología puede acelerar un proceso, pero también sus problemas.
+        </p>
+        <a class="mt-auto border-b border-primary/20 pb-2 w-max text-[11px] font-bold tracking-widest text-primary hover:border-cta-accent transition-colors hover:text-secondary" href="escritura-no-automatices-el-desorden.html">
+          DESCUBRIR
+        </a>
+      </article>
+
+      <!-- Artículo 3 grilla: La conversación difícil empieza antes de hablar -->
+      <article class="flex flex-col group">
+        <div class="aspect-[4/5] bg-white mb-8 overflow-hidden shadow-sm group-hover:shadow-lg transition-all duration-500">
+          <img alt="La conversación difícil empieza antes de hablar"
+               class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+               src="images/escritura-nueva-04-conversacion.jpg">
+        </div>
+        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.2em] font-bold mb-4 block">Conversaciones y Liderazgo</span>
+        <h3 class="text-3xl font-medium text-primary mb-6 leading-tight font-headline">
+          La conversación difícil empieza antes de hablar
+        </h3>
+        <p class="text-on-surface-variant font-light text-sm mb-8 leading-relaxed">
+          Muchas veces no evitamos una conversación por lo que pasó, sino por todo lo que imaginamos que podría pasar.
+        </p>
+        <a class="mt-auto border-b border-primary/20 pb-2 w-max text-[11px] font-bold tracking-widest text-primary hover:border-cta-accent transition-colors hover:text-secondary" href="escritura-la-conversacion-dificil-empieza-antes-de-hablar.html">
+          DESCUBRIR
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 4 — Newsletter
+       ============================================================ -->
+  <section class="mt-40 px-12 max-w-7xl mx-auto">
+    <div class="bg-brand-nav-footer p-20 md:p-32 flex flex-col items-center text-center">
+      <span class="material-symbols-outlined text-cta-accent text-5xl mb-8">mail</span>
+      <h2 class="text-5xl font-medium text-white mb-6 font-headline">Perspectivas Semanales</h2>
+      <p class="text-white/70 max-w-xl mb-12 font-light text-lg">
+        Suscribite para recibir estrategias de liderazgo y reflexiones exclusivas directo en tu bandeja de entrada.
+      </p>
+      <form action="https://formspree.io/f/mvkpoykg" method="POST"
+            class="flex flex-col md:flex-row gap-0 w-full max-w-lg">
+
+        <!-- Asunto personalizado del mail de suscripción -->
+        <input type="hidden" name="_subject" value="Nueva suscripción al newsletter — Perspectivas Semanales">
+
+        <input id="nl-email" name="email" required type="email"
+               placeholder="Email"
+               class="flex-1 bg-white border-none focus:ring-0 text-sm p-5 outline-none placeholder:text-gray-400">
+
+        <button type="submit"
+                class="bg-cta-accent text-brand-primary-text font-bold tracking-widest text-[11px] px-10 py-5 uppercase hover:bg-white transition-colors duration-300">
+          SUSCRIBIRME
+        </button>
+      </form>
+      <p class="mt-8 text-[9px] text-white/40 uppercase tracking-[0.3em]">Respetamos tu privacidad. Sin spam.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER — Idéntico al de home y servicios
+     ============================================================ -->
+<footer class="w-full bg-brand-nav-footer border-t border-outline-variant">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 py-12 w-full max-w-[1200px] mx-auto gap-8">
+    <div class="space-y-4 text-center md:text-left">
+      <div class="font-headline text-2xl text-secondary-fixed">Natalia Nitto</div>
+      <p class="text-on-primary-container max-w-sm text-base">
+        Acompañando a líderes a navegar la complejidad con claridad y propósito.
+      </p>
+    </div>
+    <div class="flex flex-col md:flex-row gap-12 text-center md:text-left">
+      <div class="flex flex-col gap-4">
+        <h4 class="text-secondary-fixed text-xs font-bold uppercase tracking-widest mb-2">Contacto</h4>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="mailto:nacoaching.exe@gmail.com">nacoaching.exe@gmail.com</a>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://wa.me/5491128495370">WhatsApp: 1128495370</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="text-secondary-fixed text-xs font-bold uppercase tracking-widest mb-2">Seguinos</h4>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://www.linkedin.com/in/natalianitto/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://www.instagram.com/entrelcaosyelcambio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="w-full border-t border-primary-container py-6">
+    <div class="max-w-[1200px] mx-auto px-6 text-center text-on-primary-container text-xs opacity-60">
+      © 2024 Natalia Nitto. Executive Coaching. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

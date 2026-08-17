@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Servicios | Natalia Nitto</title>
+<meta name="description" content="Coaching Ejecutivo Individual, Coaching para Organizaciones y Asesoría en Liderazgo. Intervenciones precisas para líderes que buscan tomar mejores decisiones, sostener conversaciones difíciles y desarrollar equipos autónomos.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- ============================================================
+     CONFIGURACIÓN DE TAILWIND (Design Tokens)
+     MISMOS TOKENS QUE HOME.HTML — mantener sincronizados.
+     ============================================================ -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          // Paleta de marca principal
+          "brand-primary-btn": "#E9C8A6",   // botón CTA dorado / acento
+          "brand-primary-text": "#1F2124",  // texto sobre CTA
+          "brand-nav-footer": "#2D4057",    // azul nav/footer
+          "cta-accent": "#E9C8A6",          // alias para compatibilidad con servicios
+
+          // Tokens Material
+          "background": "#F4F2EF",
+          "surface": "#F4F2EF",
+          "surface-bright": "#fbf9fb",
+          "surface-dim": "#dbd9db",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#efedef",
+          "surface-container": "#efedef",
+          "surface-container-high": "#e9e7ea",
+          "surface-container-highest": "#e4e2e4",
+          "surface-variant": "#e4e2e4",
+          "surface-tint": "#4d6078",
+          "inverse-surface": "#303032",
+          "inverse-on-surface": "#f2f0f2",
+
+          "primary": "#162a40",
+          "primary-container": "#2d4057",
+          "primary-fixed": "#d2e4ff",
+          "primary-fixed-dim": "#b4c8e4",
+          "inverse-primary": "#b4c8e4",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#98acc7",
+          "on-primary-fixed": "#071d32",
+          "on-primary-fixed-variant": "#35485f",
+
+          "secondary": "#735a3e",
+          "secondary-container": "#fcdab7",
+          "secondary-fixed": "#ffddba",
+          "secondary-fixed-dim": "#e1c19f",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#775e42",
+          "on-secondary-fixed": "#291803",
+          "on-secondary-fixed-variant": "#594329",
+
+          "tertiary": "#392504",
+          "tertiary-container": "#513b17",
+          "tertiary-fixed": "#ffddaf",
+          "tertiary-fixed-dim": "#e3c192",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-container": "#c5a578",
+          "on-tertiary-fixed": "#281800",
+          "on-tertiary-fixed-variant": "#5a431e",
+
+          "on-surface": "#1b1c1d",
+          "on-surface-variant": "#44474d",
+          "on-background": "#1b1c1d",
+
+          "outline": "#74777d",
+          "outline-variant": "#c4c6cd",
+
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-error-container": "#93000a"
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        fontFamily: {
+          "body": ["Inter"],
+          "headline": ["Cormorant Garamond"]
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .display-text { font-family: 'Cormorant Garamond', serif; }
+  .editorial-caps { letter-spacing: 0.05em; text-transform: uppercase; }
+  .asymmetric-grid { display: grid; grid-template-columns: repeat(12, 1fr); }
+</style>
+</head>
+
+<body class="bg-background text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+
+<!-- ============================================================
+     NAV — Idéntico al de index.html (cambia solo el link activo)
+     ============================================================ -->
+<nav class="fixed top-0 w-full z-50 bg-brand-nav-footer border-b border-primary-container">
+  <div class="flex justify-between items-center px-6 py-4 w-full max-w-[1200px] mx-auto">
+    <a class="font-headline text-2xl text-white font-normal whitespace-nowrap" href="index.html">Natalia Nitto</a>
+
+    <!-- LINKS DESKTOP (visibles desde 768px+) -->
+    <div class="hidden md:flex items-center gap-6 font-['Inter'] text-sm tracking-normal">
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-brand-primary-btn border-b border-brand-primary-btn pb-0.5" href="servicios.html">Servicios</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="escrituras.html">Escrituras</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="contacto.html">Contacto</a>
+    </div>
+
+    <!-- CTA DESKTOP (visible desde 768px+) -->
+    <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+       target="_blank" rel="noopener noreferrer"
+       class="hidden md:inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-2.5 text-sm font-medium transition-all rounded-none font-['Inter'] whitespace-nowrap hover:opacity-90">
+      Agendar una conversación
+    </a>
+
+    <!-- BOTÓN HAMBURGUESA (solo mobile, se oculta desde 768px+) -->
+    <button id="mobile-menu-toggle"
+            class="md:hidden text-white p-2 -mr-2"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+      <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+    </button>
+  </div>
+
+  <!-- MENÚ MOBILE DESPLEGABLE (dropdown desde arriba) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-nav-footer border-t border-primary-container">
+    <div class="px-6 py-6 flex flex-col gap-4 font-['Inter'] text-base">
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
+      <a class="text-brand-primary-btn font-medium" href="servicios.html">Servicios</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="escrituras.html">Escrituras</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
+
+      <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+         target="_blank" rel="noopener noreferrer"
+         class="mt-4 inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-3 text-sm font-medium text-center rounded-none font-['Inter'] hover:opacity-90 transition-all">
+        Agendar una conversación
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Script del menú mobile (toggle abrir/cerrar) -->
+<script>
+  (function() {
+    const btn = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    if (!btn || !menu || !icon) return;
+    btn.addEventListener('click', function() {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        icon.textContent = 'close';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+</script>
+
+<main class="pt-32 pb-24">
+
+  <!-- ============================================================
+       SECCIÓN 1 — Hero
+       Eyebrow + título + párrafo a la izquierda, imagen a la derecha.
+       Ambos bloques centrados verticalmente para eliminar el aire vertical.
+       ============================================================ -->
+  <section class="max-w-[1440px] mx-auto px-12 mb-32">
+    <div class="asymmetric-grid gap-12 items-center">
+      <div class="col-span-12 md:col-span-8">
+        <span class="editorial-caps text-[0.75rem] font-semibold text-secondary mb-6 block">Propuesta de Valor</span>
+        <h1 class="text-[3rem] font-medium leading-[1.1] tracking-tight text-primary mb-8 font-headline">
+          La intervención precisa para el <span class="italic font-normal">liderazgo consciente</span>.
+        </h1>
+        <p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed max-w-2xl">
+          Intervenciones precisas para liderar, decidir y transformar la claridad en acciones concretas basadas en criterio y estrategia con resultados sostenibles.
+        </p>
+      </div>
+      <div class="hidden md:block col-span-4">
+        <div class="aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl relative">
+          <img alt="Mente creativa: pensamiento estratégico como florecimiento"
+               class="w-full h-full object-cover"
+               style="filter: grayscale(40%) contrast(0.95);"
+               src="images/servicios-hero.png">
+          <!-- Overlay navy sutil para integrar con la paleta del sitio -->
+          <div class="absolute inset-0 pointer-events-none" style="background: rgba(45, 64, 87, 0.25); mix-blend-mode: multiply;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 2 — Frase puente
+       ============================================================ -->
+  <section class="max-w-[1440px] mx-auto px-12 mb-32 text-center">
+    <div class="max-w-4xl mx-auto border-y border-outline-variant/30 py-16">
+      <h2 class="text-4xl font-medium text-primary mb-6">Cada momento requiere un tipo de trabajo distinto.</h2>
+      <p class="text-xl text-on-surface-variant leading-relaxed">
+        No todos los procesos necesitan la misma profundidad ni el mismo formato. Por eso, el enfoque se adapta según el tipo de decisión, el nivel de complejidad y el contexto en el que estás.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 3 — Servicios (4 bloques alternados)
+       ============================================================ -->
+  <section class="space-y-12 px-12 max-w-[1440px] mx-auto">
+
+    <!-- ===== Servicio 1: Coaching Individual ===== -->
+    <div class="rounded-xl p-12 md:p-20 grid md:grid-cols-2 gap-16 items-start border-t-4 border-cta-accent relative overflow-hidden"
+         style="background-color: #faf6f0; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/><feColorMatrix values=%220 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0.1 0%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');">
+      <div>
+        <span class="material-symbols-outlined text-primary mb-6 text-4xl">person_search</span>
+        <h2 class="text-[3rem] font-medium tracking-tight text-primary leading-tight mb-6">
+          Coaching Individual para liderar, decidir y comunicar con mayor claridad
+        </h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+          Un espacio individual para líderes, dueños de negocio y profesionales que necesitan revisar con profundidad cómo están pensando, decidiendo y posicionándose en su rol, con foco en claridad, comunicación y acción concreta.
+        </p>
+        <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20interesa%20el%20Coaching%20Individual.%20%C2%BFPodemos%20coordinar%20una%20llamada%3F"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-block bg-primary text-on-primary px-8 py-4 rounded font-semibold tracking-wide hover:opacity-95 transition-all">
+          Reservar una llamada
+        </a>
+      </div>
+      <div class="bg-surface-container-lowest p-8 md:p-12 border-l-4 border-cta-accent">
+        <h3 class="editorial-caps text-xs font-bold mb-8 font-body" style="color:#B98A4F;">Detalles del Programa</h3>
+        <ul class="space-y-6 font-body">
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm mt-1" style="color:#B98A4F;">check_circle</span>
+            <span class="text-on-surface font-medium">Diagnóstico de situación, rol y desafío actual</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm mt-1" style="color:#B98A4F;">check_circle</span>
+            <span class="text-on-surface font-medium">Definición de objetivos concretos de trabajo</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm mt-1" style="color:#B98A4F;">check_circle</span>
+            <span class="text-on-surface font-medium">Análisis de situaciones reales del día a día</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm mt-1" style="color:#B98A4F;">check_circle</span>
+            <span class="text-on-surface font-medium">Toma de decisiones, comunicación y posicionamiento</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm mt-1" style="color:#B98A4F;">check_circle</span>
+            <span class="text-on-surface font-medium">Plan de acción con indicadores de avance</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm mt-1" style="color:#B98A4F;">check_circle</span>
+            <span class="text-on-surface font-medium">Proceso mínimo de 6 sesiones</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-primary mt-1">groups</span>
+            <span class="text-on-surface font-medium">Reuniones 1:1</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== Servicio 2: Organizaciones (fondo navy invertido) ===== -->
+    <div class="bg-brand-nav-footer text-white rounded-xl p-12 md:p-20 grid md:grid-cols-2 gap-16 items-start border-t-4 border-cta-accent relative overflow-hidden"
+         style="background-image: linear-gradient(135deg, rgba(255,255,255,0.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.03) 75%), linear-gradient(135deg, rgba(255,255,255,0.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.03) 75%); background-size: 20px 20px; background-position: 0 0, 10px 10px;">
+      <div class="order-2 md:order-1 bg-white/5 p-8 md:p-12 border-l-4 border-cta-accent backdrop-blur-sm">
+        <h3 class="editorial-caps text-xs font-bold text-white/60 mb-8 font-body">Áreas de Impacto</h3>
+        <ul class="space-y-6 font-body">
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-cta-accent mt-1">group</span>
+            <span class="text-white/90 font-medium">Diagnóstico de la dinámica actual del equipo</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-cta-accent mt-1">track_changes</span>
+            <span class="text-white/90 font-medium">Alineación con la estrategia del negocio</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-cta-accent mt-1">chat_bubble</span>
+            <span class="text-white/90 font-medium">Alineación de criterios, prioridades y responsabilidades</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-cta-accent mt-1">stars</span>
+            <span class="text-white/90 font-medium">Protocolos de comunicación y delegación efectiva</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-cta-accent mt-1">insights</span>
+            <span class="text-white/90 font-medium">Coaching individual para líderes clave</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-cta-accent mt-1">description</span>
+            <span class="text-white/90 font-medium">Indicadores de avance sobre autonomía y funcionamiento</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-cta-accent mt-1">assignment</span>
+            <span class="text-white/90 font-medium">Informe final con evolución, aprendizajes y próximos pasos</span>
+          </li>
+        </ul>
+      </div>
+      <div class="order-1 md:order-2">
+        <span class="material-symbols-outlined text-cta-accent mb-6 text-4xl">corporate_fare</span>
+        <h2 class="text-[3rem] font-medium tracking-tight text-white leading-tight mb-6">
+          Coaching para organizaciones que necesitan equipos más alineados y autónomos.
+        </h2>
+        <p class="text-white/70 text-lg leading-relaxed mb-10">
+          Para organizaciones donde las decisiones se concentran, la comunicación no fluye con claridad o el equipo depende demasiado de pocas personas. Trabajamos sobre dinámicas, criterios y responsabilidades para mejorar la autonomía, la agilidad y la efectividad del sistema.
+        </p>
+        <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20interesa%20explorar%20coaching%20para%20mi%20organizaci%C3%B3n."
+           target="_blank" rel="noopener noreferrer"
+           class="inline-block bg-cta-accent text-primary px-8 py-4 rounded font-semibold tracking-wide hover:opacity-90 transition-all">
+          Quiero trabajar esto en mi equipo
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== Servicio 3: Asesoría Estratégica ===== -->
+    <div class="rounded-xl p-12 md:p-20 grid md:grid-cols-2 gap-16 items-start border-t-4 border-primary relative overflow-hidden"
+         style="background-color: #f3ede4; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/><feColorMatrix values=%220 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0.08 0%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');">
+      <div>
+        <span class="material-symbols-outlined text-primary mb-6 text-4xl">architecture</span>
+        <h2 class="text-[3rem] font-medium tracking-tight text-primary leading-tight mb-6">
+          Asesoría Estratégica para decisiones que no pueden seguir esperando.
+        </h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+          Un espacio estructurado para analizar una situación concreta, ordenar escenarios y definir próximos pasos. Ideal cuando necesitás una mirada externa, criterio estratégico y una decisión sostenida con claridad.
+        </p>
+        <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20quisiera%20consultarte%20por%20una%20asesor%C3%ADa%20estrat%C3%A9gica."
+           target="_blank" rel="noopener noreferrer"
+           class="inline-block bg-primary text-on-primary px-8 py-4 rounded font-semibold tracking-wide hover:opacity-95 transition-all">
+          Consultar por asesoría
+        </a>
+      </div>
+      <div class="bg-surface-container-low p-8 md:p-12 border-l-4 border-primary/30">
+        <h3 class="editorial-caps text-xs font-bold mb-8 font-body" style="color:#B98A4F;">Metodología de Asesoría</h3>
+        <ul class="space-y-6 font-body">
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-primary mt-1">visibility</span>
+            <span class="text-on-surface font-medium">Análisis del contexto, actores y variables clave</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-primary mt-1">filter_list</span>
+            <span class="text-on-surface font-medium">Identificación del problema real detrás de la situación</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-primary mt-1">assignment</span>
+            <span class="text-on-surface font-medium">Evaluación de escenarios posibles</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-primary mt-1">support</span>
+            <span class="text-on-surface font-medium">Recomendaciones concretas y accionables</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-primary mt-1">balance</span>
+            <span class="text-on-surface font-medium">Definición de próximos pasos</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-primary mt-1">bolt</span>
+            <span class="text-on-surface font-medium">Acompañamiento puntual para sostener la decisión</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-primary mt-1">groups</span>
+            <span class="text-on-surface font-medium">Reuniones 1:1</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== Servicio 4: Sistémico — PRÓXIMAMENTE ===== -->
+    <div class="grayscale opacity-70 rounded-xl p-12 md:p-20 grid md:grid-cols-2 gap-16 items-start relative overflow-hidden border-t-4 border-separator"
+         style="background-color: #ede7de; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/><feColorMatrix values=%220 0 0 0 0.05 0 0 0 0 0.05 0 0 0 0 0.05 0 0 0 0.12 0%22/></filter><rect width=%22100%22 height=%22100%22 filter=%22url(%23n)%22/></svg>');">
+      <div class="absolute top-8 right-8 bg-primary text-cta-accent px-4 py-1 editorial-caps text-[0.65rem] font-bold rounded-full font-body">
+        Próximamente
+      </div>
+      <div>
+        <span class="material-symbols-outlined text-on-surface-variant mb-6 text-4xl">hub</span>
+        <h2 class="text-[3rem] font-medium tracking-tight text-primary leading-tight mb-6">
+          Coaching Sistémico para equipos
+        </h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+          Una intervención profunda para observar cómo funciona el sistema, identificar patrones repetidos y fortalecer la autonomía colectiva.
+        </p>
+        <button class="bg-surface-dim text-on-surface-variant/60 px-8 py-4 rounded font-semibold tracking-wide cursor-not-allowed" disabled>
+          Más información pronto
+        </button>
+      </div>
+      <div class="bg-white/30 p-8 md:p-12 border-l-4 border-outline-variant font-body">
+        <h3 class="editorial-caps text-xs font-bold mb-8" style="color:#B98A4F;">Componentes del Proceso</h3>
+        <ul class="space-y-6">
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-on-surface-variant mt-1">biotech</span>
+            <span class="text-on-surface-variant font-medium">Diagnóstico sistémico del equipo</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-on-surface-variant mt-1">pattern</span>
+            <span class="text-on-surface-variant font-medium">Identificación de patrones de funcionamiento</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-on-surface-variant mt-1">groups_2</span>
+            <span class="text-on-surface-variant font-medium">Conversaciones grupales facilitadas</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-on-surface-variant mt-1">handshake</span>
+            <span class="text-on-surface-variant font-medium">Acuerdos de comunicación y decisión</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-sm text-on-surface-variant mt-1">shield</span>
+            <span class="text-on-surface-variant font-medium">Cultura de responsabilidad compartida</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 4 — CTA Final
+       ============================================================ -->
+  <section class="mt-48 mb-24 max-w-[1440px] mx-auto px-12 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-5xl font-medium text-primary mb-8">
+        ¿Necesitás ordenar una decisión, un rol o una dinámica de trabajo?
+      </h2>
+      <p class="text-xl text-on-surface-variant mb-12 leading-relaxed">
+        Si hay algo que sabés que necesita cambiar, pero todavía no encontraste el espacio para pensarlo con claridad, podemos empezar por una conversación inicial.
+      </p>
+      <a class="inline-flex items-center gap-3 text-primary font-bold border-b-2 border-primary pb-1 hover:gap-5 transition-all font-body text-lg" href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico." target="_blank" rel="noopener noreferrer">
+        Agendar una sesión de diagnóstico sin compromiso
+        <span class="material-symbols-outlined text-xl">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER — Idéntico al de index.html
+     ============================================================ -->
+<footer class="w-full bg-brand-nav-footer border-t border-outline-variant">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 py-12 w-full max-w-[1200px] mx-auto gap-8">
+    <div class="space-y-4 text-center md:text-left">
+      <div class="font-headline text-2xl text-secondary-fixed">Natalia Nitto</div>
+      <p class="text-on-primary-container max-w-sm text-base">
+        Acompañando a líderes a navegar la complejidad con claridad y propósito.
+      </p>
+    </div>
+    <div class="flex flex-col md:flex-row gap-12 text-center md:text-left">
+      <div class="flex flex-col gap-4">
+        <h4 class="text-secondary-fixed text-xs font-bold uppercase tracking-widest mb-2">Contacto</h4>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="mailto:nacoaching.exe@gmail.com">nacoaching.exe@gmail.com</a>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://wa.me/5491128495370">WhatsApp: 1128495370</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="text-secondary-fixed text-xs font-bold uppercase tracking-widest mb-2">Seguinos</h4>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://www.linkedin.com/in/natalianitto/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://www.instagram.com/entrelcaosyelcambio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="w-full border-t border-primary-container py-6">
+    <div class="max-w-[1200px] mx-auto px-6 text-center text-on-primary-container text-xs opacity-60">
+      © 2024 Natalia Nitto. Executive Coaching. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

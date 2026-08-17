@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>No automatices el desorden | Natalia Nitto</title>
+<meta name="description" content="Automatizar una tarea confusa no la vuelve más eficiente, la vuelve más rápida. Reflexión sobre IA, gestión y por qué incorporar tecnología es antes una decisión de gestión que técnica.">
+<meta name="author" content="Natalia Nitto">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "No automatices el desorden",
+  "description": "Automatizar una tarea confusa no la vuelve más eficiente, la vuelve más rápida. Reflexión sobre IA, gestión y por qué incorporar tecnología es antes una decisión de gestión que técnica.",
+  "author": {
+    "@type": "Person",
+    "name": "Natalia Nitto",
+    "url": "https://www.linkedin.com/in/natalianitto/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Natalia Nitto"
+  },
+  "articleSection": "IA y Gestión"
+}
+</script>
+
+<!-- Tailwind config -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "brand-primary-btn": "#E9C8A6",
+          "brand-primary-text": "#1F2124",
+          "brand-nav-footer": "#2D4057",
+          "cta-accent": "#E9C8A6",
+
+          "background": "#F4F2EF",
+          "surface": "#F4F2EF",
+          "surface-bright": "#fbf9fb",
+          "surface-dim": "#dbd9db",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#efedef",
+          "surface-container": "#efedef",
+          "surface-container-high": "#e9e7ea",
+          "surface-container-highest": "#e4e2e4",
+          "surface-variant": "#e4e2e4",
+          "surface-tint": "#4d6078",
+
+          "primary": "#162a40",
+          "primary-container": "#2d4057",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#98acc7",
+
+          "secondary": "#735a3e",
+          "secondary-container": "#fcdab7",
+
+          "on-surface": "#1b1c1d",
+          "on-surface-variant": "#44474d",
+          "on-background": "#1b1c1d",
+
+          "outline": "#74777d",
+          "outline-variant": "#c4c6cd"
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        fontFamily: {
+          "body": ["Inter"],
+          "headline": ["Cormorant Garamond"]
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-headline { font-family: 'Cormorant Garamond', serif; }
+  .text-editorial { letter-spacing: -0.01em; line-height: 1.1; }
+
+  /* Estilos específicos del artículo — DESKTOP */
+  .article-body p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    font-size: 1.0625rem;
+    color: #1b1c1d;
+  }
+  .article-body p:first-of-type {
+    font-size: 1.1875rem;
+    color: #162a40;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .article-body strong {
+    color: #162a40;
+    font-weight: 500;
+  }
+  .pullquote {
+    border-left: 3px solid #E9C8A6;
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.625rem !important;
+    font-style: normal !important;
+    color: #162a40 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.01em;
+    font-weight: 500 !important;
+  }
+  .progression {
+    background: #efedef;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    border-left: 3px solid #2D4057;
+  }
+  .progression p {
+    margin-bottom: 0.85rem !important;
+    font-size: 1.0625rem !important;
+    font-weight: 400 !important;
+    color: #44474d !important;
+    line-height: 1.55 !important;
+  }
+  .progression p:last-child { margin-bottom: 0 !important; }
+  .progression strong {
+    color: #162a40;
+    font-weight: 500;
+  }
+  /* Voz de personaje / preguntas contrapuestas */
+  .voz {
+    font-style: italic;
+    color: #44474d;
+    padding-left: 1.25rem;
+    border-left: 2px solid #c4c6cd;
+    margin: 1rem 0 !important;
+    display: block;
+  }
+
+  /* MOBILE — todo más chico y compacto */
+  @media (max-width: 768px) {
+    .article-body p {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .article-body p:first-of-type {
+      font-size: 1.0625rem;
+      line-height: 1.55;
+    }
+    .pullquote {
+      font-size: 1.25rem !important;
+      padding: 0.3rem 0 0.3rem 1.1rem;
+      margin: 1.5rem 0;
+      line-height: 1.35 !important;
+    }
+    .progression {
+      padding: 1.25rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .progression p {
+      font-size: 0.9375rem !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0.65rem !important;
+    }
+    .voz {
+      padding-left: 0.9rem;
+      margin: 0.75rem 0 !important;
+    }
+  }
+</style>
+</head>
+
+<body class="bg-background text-on-background antialiased">
+
+<nav class="fixed top-0 w-full z-50 bg-brand-nav-footer border-b border-primary-container">
+  <div class="flex justify-between items-center px-6 py-4 w-full max-w-[1200px] mx-auto">
+    <a class="font-headline text-2xl text-white font-normal whitespace-nowrap" href="index.html">Natalia Nitto</a>
+
+    <div class="hidden md:flex items-center gap-6 font-['Inter'] text-sm tracking-normal">
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="servicios.html">Servicios</a>
+      <a class="text-brand-primary-btn border-b border-brand-primary-btn pb-0.5" href="escrituras.html">Escrituras</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="contacto.html">Contacto</a>
+    </div>
+
+    <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+       target="_blank" rel="noopener noreferrer"
+       class="hidden md:inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-2.5 text-sm font-medium transition-all rounded-none font-['Inter'] whitespace-nowrap hover:opacity-90">
+      Agendar una conversación
+    </a>
+
+    <button id="mobile-menu-toggle"
+            class="md:hidden text-white p-2 -mr-2"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+      <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-nav-footer border-t border-primary-container">
+    <div class="px-6 py-6 flex flex-col gap-4 font-['Inter'] text-base">
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+      <a class="text-brand-primary-btn font-medium" href="escrituras.html">Escrituras</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
+      <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+         target="_blank" rel="noopener noreferrer"
+         class="mt-4 inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-3 text-sm font-medium text-center rounded-none font-['Inter'] hover:opacity-90 transition-all">
+        Agendar una conversación
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function() {
+    const btn = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    if (!btn || !menu || !icon) return;
+    btn.addEventListener('click', function() {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        icon.textContent = 'close';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+</script>
+
+<main class="pt-32 pb-20">
+
+  <article class="px-6 md:px-12 max-w-3xl mx-auto">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-10 text-xs tracking-[0.15em] uppercase text-on-surface-variant">
+      <a href="escrituras.html" class="hover:text-secondary transition-colors">Escrituras</a>
+      <span class="mx-2 text-outline-variant">/</span>
+      <span>IA y Gestión</span>
+    </nav>
+
+    <!-- Imagen acento -->
+    <div class="mb-12 overflow-hidden">
+      <img alt="No automatices el desorden"
+           class="w-full aspect-[16/9] object-cover"
+           src="images/escritura-nueva-03-desorden.jpg">
+    </div>
+
+    <!-- Header -->
+    <header class="mb-10">
+      <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.25em] font-bold mb-5 block">
+        IA y Gestión
+      </span>
+      <h1 class="text-3xl md:text-4xl font-medium text-primary text-editorial mb-5 font-headline">
+        No automatices el desorden.
+      </h1>
+      <p class="text-base md:text-lg text-on-surface-variant font-light leading-relaxed italic">
+        Antes de incorporar IA, revisá procesos, roles y decisiones. La tecnología puede acelerar un proceso, pero también sus problemas.
+      </p>
+      <div class="w-16 h-0.5 bg-cta-accent mt-8"></div>
+    </header>
+
+    <!-- Cuerpo del artículo -->
+    <div class="article-body">
+
+      <!-- Apertura como pullquote (2 líneas juntas, mismo pensamiento) -->
+      <p class="pullquote">
+        Automatizar una tarea confusa no la vuelve más eficiente. La vuelve más rápida.
+      </p>
+
+      <p>
+        Y ahí hay una conversación que muchas pymes necesitan tener antes de correr detrás de la próxima herramienta de IA.
+      </p>
+
+      <p>
+        Porque hoy muchas empresas están mirando qué pueden automatizar. <strong>Pocas están mirando si eso que quieren automatizar está bien diseñado.</strong>
+      </p>
+
+      <!-- Bloque de progresión: los 4 escenarios "Si X..." -->
+      <div class="progression">
+        <p>Si la <strong>atención al cliente</strong> no tiene un estándar claro, la IA puede ayudar a responder más rápido. Pero también puede ayudar a responder mal, más rápido.</p>
+        <p>Si un <strong>proceso depende de que una persona "sepa cómo se hace"</strong>, automatizarlo no necesariamente lo profesionaliza. Puede simplemente esconder la fragilidad detrás de una herramienta nueva.</p>
+        <p>Si el <strong>equipo no sabe qué decidir, qué consultar o qué escalar</strong>, la tecnología puede acelerar el mismo cuello de botella.</p>
+        <p>Y si <strong>nadie conversa con las personas</strong> sobre qué capacidades necesitan desarrollar, qué tareas van a cambiar o qué miedos aparecen frente a nuevas formas de trabajar, la innovación puede sentirse más como amenaza que como oportunidad.</p>
+      </div>
+
+      <!-- Segundo pullquote: la tesis central -->
+      <p class="pullquote">
+        La IA puede acelerar una pyme. Pero también puede acelerar sus problemas.
+      </p>
+
+      <p>
+        Por eso, antes de preguntarse solamente:
+      </p>
+
+      <!-- Pregunta común (voz) -->
+      <p class="voz">"¿Qué herramienta vamos a incorporar?"</p>
+
+      <p>
+        quizás convenga preguntar:
+      </p>
+
+      <!-- Pregunta que propone Natalia (voz) -->
+      <p class="voz">"¿Qué parte del trabajo necesita ser rediseñada antes de ser automatizada?"</p>
+
+      <p>
+        Porque incorporar IA no es solo una decisión tecnológica. <strong>Es una decisión de gestión.</strong>
+      </p>
+
+      <p>
+        Implica revisar procesos, roles, responsabilidades, capacidades, conversaciones y formas de liderazgo.
+      </p>
+
+      <p>
+        Una pyme no gana capacidad de crecimiento solo porque automatiza. <strong>Gana capacidad de crecimiento cuando prepara su estructura, sus equipos y su forma de trabajar para que la tecnología tenga dónde apoyarse.</strong>
+      </p>
+
+      <p>
+        De lo contrario, el riesgo no es quedarse atrás por no usar IA. El riesgo es usar IA para hacer más rápido algo que todavía no estaba suficientemente pensado.
+      </p>
+
+      <!-- Pullquote de cierre (2 líneas juntas) -->
+      <p class="pullquote">
+        Y ahí no estamos transformando. Estamos sofisticando el desorden.
+      </p>
+
+    </div>
+
+    <!-- Footer del artículo -->
+    <footer class="mt-16 pt-10 border-t border-outline-variant/40">
+      <div class="mb-8">
+        <span class="text-on-surface-variant text-[10px] uppercase tracking-[0.25em] font-bold mb-4 block">
+          Publicado originalmente en
+        </span>
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7478107757477404672"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 bg-primary text-white px-6 py-3 text-sm font-medium hover:bg-primary-container transition-colors">
+          <span class="material-symbols-outlined text-lg">open_in_new</span>
+          Ver el post original en LinkedIn
+        </a>
+      </div>
+
+      <a href="escrituras.html"
+         class="inline-flex items-center gap-2 text-secondary hover:text-primary text-sm font-medium transition-colors">
+        <span class="material-symbols-outlined text-lg">arrow_back</span>
+        Volver a Escrituras
+      </a>
+    </footer>
+
+  </article>
+
+</main>
+
+<!-- FOOTER del sitio -->
+<footer class="bg-brand-nav-footer text-white py-16">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+      <div>
+        <p class="font-headline text-2xl mb-4">Natalia Nitto</p>
+        <p class="text-sm text-on-primary-container font-light leading-relaxed">
+          Coaching ejecutivo y consultoría estratégica para líderes que necesitan claridad para decidir.
+        </p>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-[0.25em] font-bold mb-4 text-brand-primary-btn">Navegación</p>
+        <div class="flex flex-col gap-2 text-sm">
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="escrituras.html">Escrituras</a>
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="sobremi.html">Sobre mí</a>
+          <a class="text-on-primary-container hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-[0.25em] font-bold mb-4 text-brand-primary-btn">Redes</p>
+        <div class="flex flex-col gap-2 text-sm">
+          <a href="https://www.linkedin.com/in/natalianitto/" target="_blank" rel="noopener noreferrer"
+             class="text-on-primary-container hover:text-brand-primary-btn transition-colors">LinkedIn</a>
+          <a href="https://www.instagram.com/entrelcaosyelcambio/" target="_blank" rel="noopener noreferrer"
+             class="text-on-primary-container hover:text-brand-primary-btn transition-colors">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-primary-container pt-6 text-xs text-on-primary-container">
+      © 2026 Natalia Nitto · Coaching Ejecutivo y Consultoría Estratégica
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

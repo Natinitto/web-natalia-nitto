@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sobre Mí | Natalia Nitto</title>
+<meta name="description" content="Natalia Nitto: coach ejecutiva y consultora estratégica. Un enfoque que combina experiencia real, criterio estratégico y mirada humana para acompañar a líderes y equipos en momentos de decisión.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- ============================================================
+     CONFIGURACIÓN DE TAILWIND (Design Tokens)
+     MISMOS TOKENS QUE EL RESTO DEL SITIO — mantener sincronizados.
+     ============================================================ -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          // Paleta de marca principal
+          "brand-primary-btn": "#E9C8A6",
+          "brand-primary-text": "#1F2124",
+          "brand-nav-footer": "#2D4057",
+          "cta-accent": "#E9C8A6",
+          "separator": "#BBB2A9",
+
+          // Tokens Material
+          "background": "#F4F2EF",
+          "surface": "#F4F2EF",
+          "surface-bright": "#fbf9fb",
+          "surface-dim": "#dbd9db",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#efedef",
+          "surface-container": "#efedef",
+          "surface-container-high": "#e9e7ea",
+          "surface-container-highest": "#e4e2e4",
+          "surface-variant": "#e4e2e4",
+
+          "primary": "#162a40",
+          "primary-container": "#2d4057",
+          "on-primary": "#ffffff",
+          "on-primary-container": "#98acc7",
+          "inverse-primary": "#b4c8e4",
+
+          "secondary": "#735a3e",
+          "secondary-fixed": "#ffddba",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#775e42",
+
+          "on-surface": "#1b1c1d",
+          "on-surface-variant": "#44474d",
+          "on-background": "#1b1c1d",
+
+          "outline": "#74777d",
+          "outline-variant": "#c4c6cd"
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        fontFamily: {
+          "body": ["Inter"],
+          "headline": ["Cormorant Garamond"]
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-headline { font-family: 'Cormorant Garamond', serif; }
+  .irregular-shape {
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  }
+</style>
+</head>
+
+<body class="bg-background text-on-surface selection:bg-cta-accent selection:text-primary">
+
+<!-- ============================================================
+     NAV — Idéntico al resto (cambia solo el link activo)
+     ============================================================ -->
+<nav class="fixed top-0 w-full z-50 bg-brand-nav-footer border-b border-primary-container">
+  <div class="flex justify-between items-center px-6 py-4 w-full max-w-[1200px] mx-auto">
+    <a class="font-headline text-2xl text-white font-normal whitespace-nowrap" href="index.html">Natalia Nitto</a>
+
+    <!-- LINKS DESKTOP (visibles desde 768px+) -->
+    <div class="hidden md:flex items-center gap-6 font-['Inter'] text-sm tracking-normal">
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="index.html">Home</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="servicios.html">Servicios</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="escrituras.html">Escrituras</a>
+      <a class="text-brand-primary-btn border-b border-brand-primary-btn pb-0.5" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors duration-200" href="contacto.html">Contacto</a>
+    </div>
+
+    <!-- CTA DESKTOP (visible desde 768px+) -->
+    <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+       target="_blank" rel="noopener noreferrer"
+       class="hidden md:inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-2.5 text-sm font-medium transition-all rounded-none font-['Inter'] whitespace-nowrap hover:opacity-90">
+      Agendar una conversación
+    </a>
+
+    <!-- BOTÓN HAMBURGUESA (solo mobile, se oculta desde 768px+) -->
+    <button id="mobile-menu-toggle"
+            class="md:hidden text-white p-2 -mr-2"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+      <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+    </button>
+  </div>
+
+  <!-- MENÚ MOBILE DESPLEGABLE (dropdown desde arriba) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-nav-footer border-t border-primary-container">
+    <div class="px-6 py-6 flex flex-col gap-4 font-['Inter'] text-base">
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="index.html">Home</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="servicios.html">Servicios</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="escrituras.html">Escrituras</a>
+      <a class="text-brand-primary-btn font-medium" href="sobremi.html">Sobre mí</a>
+      <a class="text-white hover:text-brand-primary-btn transition-colors" href="contacto.html">Contacto</a>
+
+      <a href="https://wa.me/5491128495370?text=Hola%20Natalia%2C%20me%20gustar%C3%ADa%20agendar%20una%20conversaci%C3%B3n."
+         target="_blank" rel="noopener noreferrer"
+         class="mt-4 inline-block bg-brand-primary-btn text-brand-nav-footer px-6 py-3 text-sm font-medium text-center rounded-none font-['Inter'] hover:opacity-90 transition-all">
+        Agendar una conversación
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Script del menú mobile (toggle abrir/cerrar) -->
+<script>
+  (function() {
+    const btn = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    if (!btn || !menu || !icon) return;
+    btn.addEventListener('click', function() {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        icon.textContent = 'close';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  })();
+</script>
+
+<main>
+
+  <!-- ============================================================
+       SECCIÓN 1 — Hero
+       Foto de Natalia + título grande
+       ============================================================ -->
+  <section class="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-8 md:px-16 overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full max-w-7xl">
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <div class="relative group">
+          <div class="absolute -inset-4 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-700"></div>
+          <img alt="Natalia Nitto"
+               class="relative w-full aspect-[4/5] object-cover irregular-shape shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000"
+               src="images/natalia-sobremi.jpg">
+        </div>
+      </div>
+      <div class="lg:col-span-7 order-1 lg:order-2 space-y-8">
+        <span class="text-primary text-[11px] tracking-[0.3em] uppercase font-bold bg-white/50 px-4 py-1.5 inline-block">Perfil Profesional</span>
+        <h1 class="font-headline text-3xl md:text-5xl font-medium text-primary leading-[1.1] tracking-tight">
+          Liderazgo desde la <span class="italic font-medium text-on-surface">experiencia real</span>, no desde la teoría.
+        </h1>
+        <p class="text-on-surface-variant text-xl md:text-2xl font-light leading-relaxed max-w-2xl">
+          Acompaño a líderes y dueños de negocio a tomar decisiones claras cuando el contexto cambia y el camino no está del todo definido.
+        </p>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <span class="material-symbols-outlined text-separator text-3xl">expand_more</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 2 — Manifiesto / Mi enfoque
+       Introducción narrativa antes de la trayectoria.
+       ============================================================ -->
+  <section class="py-32 px-8 md:px-16 bg-surface">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-primary text-[11px] tracking-[0.3em] uppercase font-bold mb-6 block">Mi enfoque</span>
+
+      <h2 class="font-headline text-4xl md:text-5xl font-medium text-primary leading-[1.15] mb-12">
+        Experiencia real, mirada humana y criterio estratégico.
+      </h2>
+
+      <div class="w-12 h-1 bg-cta-accent mb-12"></div>
+
+      <div class="space-y-8 text-on-surface-variant text-lg leading-relaxed font-light">
+        <p>
+          Trabajo con profesionales, líderes y organizaciones en momentos donde lo que está en juego no es menor: decisiones, dirección y forma de avanzar.
+        </p>
+        <p>
+          Mi recorrido profesional se construyó gestionando operaciones, procesos y equipos, en contextos donde decidir no era teórico: era parte del día a día. Con el tiempo entendí que muchas veces no es la falta de información lo que frena, sino la falta de claridad para ordenar, priorizar y sostener decisiones.
+        </p>
+        <p>
+          También lo viví en primera persona. Momentos de cambio, duda y replanteo profesional donde avanzar requería algo más que herramientas: requería criterio. Ese cruce entre experiencia real y proceso personal es lo que hoy sostiene mi trabajo.
+        </p>
+      </div>
+
+      <!-- Cierre destacado: afirmación final con borde dorado -->
+      <p class="font-headline text-2xl md:text-3xl font-medium italic text-primary leading-snug mt-12 pl-8 border-l-2 border-cta-accent">
+        No trabajo con fórmulas ni respuestas prefabricadas. Acompaño a pensar mejor, decidir con claridad y actuar con criterio propio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 3 — Trayectoria & Rigor
+       ============================================================ -->
+  <section class="bg-white/30 py-32 px-8 md:px-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div class="lg:col-span-4 sticky top-40">
+          <h2 class="font-headline text-4xl font-medium text-primary mb-6">Trayectoria & Rigor</h2>
+          <div class="w-12 h-1 bg-cta-accent"></div>
+        </div>
+        <div class="lg:col-span-8 space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Card 1: Pasado Corporativo -->
+            <div class="bg-surface p-10 border-t-4 border-cta-accent shadow-sm">
+              <span class="text-primary text-[10px] tracking-widest uppercase font-bold mb-4 block">Pasado Corporativo</span>
+              <h3 class="font-headline text-2xl font-medium mb-4 text-primary">Gerente Ejecutiva & Responsable de Operaciones</h3>
+              <p class="text-on-surface-variant leading-relaxed text-sm">
+                Liderando operaciones con foco en eficiencia, toma de decisiones y resultados sostenibles. Simplificando la complejidad operativa en acciones y criterios claros.
+              </p>
+            </div>
+
+            <!-- Card 2: Experiencia -->
+            <div class="bg-surface p-10 border-t-4 border-primary shadow-sm">
+              <span class="text-primary text-[10px] tracking-widest uppercase font-bold mb-4 block">Experiencia</span>
+              <h3 class="font-headline text-2xl font-medium mb-4 text-primary">Responsable de Calidad</h3>
+              <p class="text-on-surface-variant leading-relaxed text-sm">
+                Optimizando procesos y estructuras en contextos de crecimiento y cambio. Implementando sistemas que sostienen la mejora continua y la coherencia operativa.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 3 — Enfoque Diferencial
+       5 áreas de trabajo en grilla horizontal
+       ============================================================ -->
+  <section class="py-32 px-8 md:px-16 bg-surface overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col items-center text-center mb-24 space-y-6">
+        <h2 class="font-headline text-5xl md:text-7xl font-medium text-primary max-w-4xl leading-tight">
+          Mi enfoque no es motivacional <span class="text-cta-accent font-medium">ni teórico.</span>
+        </h2>
+        <p class="text-on-surface-variant text-xl font-light">Es práctico, enfocado en decisiones concretas y acción sostenida.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-0 border-y border-separator/20">
+        <div class="p-8 border-r border-separator/20 hover:bg-white/40 transition-colors duration-500">
+          <span class="material-symbols-outlined text-3xl text-separator mb-6">query_stats</span>
+          <h4 class="text-sm font-bold mb-4 text-primary uppercase tracking-wider">Toma de Decisiones</h4>
+        </div>
+        <div class="p-8 border-r border-separator/20 hover:bg-white/40 transition-colors duration-500">
+          <span class="material-symbols-outlined text-3xl text-separator mb-6">groups</span>
+          <h4 class="text-sm font-bold mb-4 text-primary uppercase tracking-wider">Gestión de Equipos</h4>
+        </div>
+        <div class="p-8 border-r border-separator/20 hover:bg-white/40 transition-colors duration-500">
+          <span class="material-symbols-outlined text-3xl text-separator mb-6">forum</span>
+          <h4 class="text-sm font-bold mb-4 text-primary uppercase tracking-wider">Comunicación Efectiva</h4>
+        </div>
+        <div class="p-8 border-r border-separator/20 hover:bg-white/40 transition-colors duration-500">
+          <span class="material-symbols-outlined text-3xl text-separator mb-6">account_tree</span>
+          <h4 class="text-sm font-bold mb-4 text-primary uppercase tracking-wider">Claridad en Roles y Dirección</h4>
+        </div>
+        <div class="p-8 hover:bg-white/40 transition-colors duration-500">
+          <span class="material-symbols-outlined text-3xl text-separator mb-6">architecture</span>
+          <h4 class="text-sm font-bold mb-4 text-primary uppercase tracking-wider">Claridad Organizacional</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 4 — Historia Personal (fondo navy)
+       ============================================================ -->
+  <section class="bg-brand-nav-footer text-white py-32 px-8 md:px-16 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-25">
+      <img alt="Textura de fondo"
+           class="w-full h-full object-cover grayscale"
+           src="images/sobremi-fondo.jpg">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="space-y-10">
+          <h2 class="font-headline text-5xl md:text-6xl font-medium leading-tight">
+            Forjada en la <span class="text-cta-accent">incertidumbre.</span>
+          </h2>
+          <div class="space-y-6 text-white/80 font-light leading-relaxed text-lg">
+            <p>
+              Emigrar y empezar de cero me enseñó que la resiliencia no es aguantar, sino reconstruirse con mayor precisión. Acompaño a mis clientes a navegar la incertidumbre aceptando la vulnerabilidad del contexto, pero sosteniendo una dirección clara, incluso cuando el camino no está completamente definido.
+            </p>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="aspect-square bg-white/5 backdrop-blur-sm p-16 flex items-center justify-center border border-white/10">
+            <div class="text-center space-y-6">
+              <span class="material-symbols-outlined text-6xl text-cta-accent/50">format_quote</span>
+              <p class="font-headline text-3xl font-medium italic leading-snug">"Acompaño a líderes que no buscan motivación, sino efectividad consciente."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 5 — Cierre + Formulario
+       ============================================================ -->
+  <section class="py-32 px-8 md:px-16 bg-surface">
+    <div class="max-w-3xl mx-auto space-y-12">
+      <div class="text-center space-y-4">
+        <h2 class="font-headline text-5xl text-primary font-medium">¿Comenzamos la conversación?</h2>
+        <p class="text-on-surface-variant text-lg font-light">
+          Cada proceso comienza entendiendo el contexto, la complejidad y las decisiones que hoy necesitan ser abordadas.
+        </p>
+      </div>
+      <form action="https://formspree.io/f/mljrevga" method="POST"
+            class="space-y-6 bg-white/50 p-10 shadow-sm border border-separator/10">
+
+        <!-- Asunto personalizado del mail que recibe Natalia -->
+        <input type="hidden" name="_subject" value="Nueva consulta desde la web — Sobre mí">
+
+        <div class="space-y-2">
+          <label for="sm-nombre" class="block text-xs font-bold uppercase tracking-widest text-primary">Nombre</label>
+          <input type="text" id="sm-nombre" name="Nombre" required
+                 class="w-full bg-surface border-separator/20 p-4 focus:ring-cta-accent focus:border-cta-accent text-sm"
+                 placeholder="Tu nombre y apellido">
+        </div>
+
+        <div class="space-y-2">
+          <label for="sm-email" class="block text-xs font-bold uppercase tracking-widest text-primary">Email</label>
+          <input type="email" id="sm-email" name="email" required
+                 class="w-full bg-surface border-separator/20 p-4 focus:ring-cta-accent focus:border-cta-accent text-sm"
+                 placeholder="tu@correo.com">
+        </div>
+
+        <div class="space-y-2">
+          <label for="sm-tema" class="block text-xs font-bold uppercase tracking-widest text-primary">¿Qué te gustaría trabajar?</label>
+          <select id="sm-tema" name="Tema de interés" required
+                  class="w-full bg-surface border-separator/20 p-4 focus:ring-cta-accent focus:border-cta-accent text-sm">
+            <option value="Toma de decisiones estratégica">Toma de decisiones estratégica</option>
+            <option value="Gestión de comités de dirección">Gestión de comités de dirección</option>
+            <option value="Estructura y procesos">Estructura y procesos</option>
+            <option value="Otros desafíos">Otros desafíos</option>
+          </select>
+        </div>
+
+        <div class="space-y-2">
+          <label for="sm-mensaje" class="block text-xs font-bold uppercase tracking-widest text-primary">Tu mensaje</label>
+          <textarea id="sm-mensaje" name="Mensaje" required
+                    class="w-full bg-surface border-separator/20 p-4 focus:ring-cta-accent focus:border-cta-accent text-sm min-h-[150px]"
+                    placeholder="¿Qué situación, desafío o decisión te gustaría abordar?"></textarea>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-cta-accent text-primary py-5 text-sm font-bold tracking-widest uppercase hover:brightness-95 transition-all duration-300">
+          Agendar conversación inicial
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FRASE DE CIERRE — Banner
+       ============================================================ -->
+  <div class="py-20 bg-white/40 text-center border-t border-separator/10">
+    <p class="font-headline text-3xl md:text-4xl font-medium italic text-primary px-8">
+      "Cuando todo depende de vos, pensar con claridad deja de ser un lujo."
+    </p>
+  </div>
+
+</main>
+
+<!-- ============================================================
+     FOOTER — Idéntico al del resto del sitio
+     ============================================================ -->
+<footer class="w-full bg-brand-nav-footer border-t border-outline-variant">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 py-12 w-full max-w-[1200px] mx-auto gap-8">
+    <div class="space-y-4 text-center md:text-left">
+      <div class="font-headline text-2xl text-secondary-fixed">Natalia Nitto</div>
+      <p class="text-on-primary-container max-w-sm text-base">
+        Acompañando a líderes a navegar la complejidad con claridad y propósito.
+      </p>
+    </div>
+    <div class="flex flex-col md:flex-row gap-12 text-center md:text-left">
+      <div class="flex flex-col gap-4">
+        <h4 class="text-secondary-fixed text-xs font-bold uppercase tracking-widest mb-2">Contacto</h4>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="mailto:nacoaching.exe@gmail.com">nacoaching.exe@gmail.com</a>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://wa.me/5491128495370">WhatsApp: 1128495370</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="text-secondary-fixed text-xs font-bold uppercase tracking-widest mb-2">Seguinos</h4>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://www.linkedin.com/in/natalianitto/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="text-on-primary-container hover:text-secondary-fixed transition-colors text-sm" href="https://www.instagram.com/entrelcaosyelcambio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="w-full border-t border-primary-container py-6">
+    <div class="max-w-[1200px] mx-auto px-6 text-center text-on-primary-container text-xs opacity-60">
+      © 2024 Natalia Nitto. Executive Coaching. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
